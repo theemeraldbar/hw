@@ -154,6 +154,10 @@
 		margin:8px;
 		-webkit-transform:rotate(-22.5deg);
 		-webkit-transition: -webkit-transform 0.3s ease;
+		-moz-transform:rotate(-22.5deg);
+		-moz-transition: -moz-transform 0.3s ease;
+		-ms-transform:rotate(-22.5deg);
+		-ms-transition -ms-transform 0.3s ease;
 	}
 	div.rect.copy{
 		z-index: 0;
@@ -162,6 +166,9 @@
 		line-height:100px;
 		font-size:2em;
 		-webkit-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		transform:rotate(45deg);
 	}
 	div.rect.one{
 		width:100px;
@@ -172,6 +179,8 @@
 		left:0px;
 		z-index: -1;
 		transform:rotate(22.5deg);
+		moz-transform:rotate(22.5deg);
+		ms-transform:rotate(22.5deg);
 	}
 	div.rect.two{
 		width:100px;
@@ -182,6 +191,8 @@
 		left:0px;
 		z-index: -1;
 		transform:rotate(-22.5deg);
+		moz-transform:rotate(-22.5deg);
+		ms-transform:rotate(-22.5deg);
 	}
 	div.rect.three{
 		width:100px;
@@ -193,11 +204,19 @@
 		z-index: -1;
 		-webkit-transform:rotate(-45deg);
 		-webkit-transition: -webkit-transform 0.3s ease;
+		-moz-transform:rotate(-45deg);
+		-moz-transition: -moz-transform 0.3s ease;
+		-ms-transform:rotate(-45deg);
 	}
 	div.rect-container:hover{
 		background:#ffaa00;
 		cursor:pointer;
 		-webkit-transform:rotate(2.5deg);
+		-moz-transform:rotate(2.5deg);
+		-ms-transform:rotate(2.5deg);
+		transform:rotate(2.5deg);
+		-moz-animation-duration: 0.3s; 
+
 
 	}
 	div.rect.copy:active{
