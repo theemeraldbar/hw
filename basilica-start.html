@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basilica! | Pesto</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--sets the scale properly for responsive-->
+	<script src="js/modernizr.js"></script><!--looking at the browser you are in and detecting which features it supports.  places code within the html tag within the browser-->
+	<style type="text/css">
+	@import url(futura/stylesheet.css) screen;
+	* { padding:0; margin:0;}
+	.wrapper { 
+		width:770px; 
+		margin:0 auto; 
+		padding-top: 50px;
+	}
+	.content_main, .content_sub  { width: 50%; float: left; padding:16px 0; }
+	.site_info { clear: both; }
+	.content { background: url(img/html.png) repeat-y 50% 50%;}
+	.clearfix:after { /*prevents collapsing*/
+		content:"."; 
+		clear:both; 
+		display: block; 
+		height: 0; 
+		visibility: hidden; 
+	}
+	.branding {
+		position: relative;
+		height: 120px;
+		background: #88a308;
+		border-radius: 8px 8px 0 0;
+	}
+	.branding h1 {
+		position: absolute;
+		/*background: url(img/h1.png) no-repeat;*/
+		/*width: 787px;*//*exact dimensions of the width of the images*/
+		/*height: 169px;*/
+		top:0px;/*(from-60px)*/
+		left:180px;/*(from-30px)*/
+		/*text-indent:-99999px;*//*text replacement. a way for the branding of the site to come through*/
+		font-family: 'FuturaStdLight';/*bringing in custom fonts. with css import above*/
+		font-size:640%;
+		color:#fff;
+	}
+	.branding h2{/*converting that star image to css*/
+		background: url(img/beta.png) no-repeat;
+		width:85px;
+		height:85px;
+		position:absolute;
+		top:-20px;
+		right:-20px;
+		color:#fff;
+		line-height:85px;
+		text-align:center;
+		text-transform:uppercase;
+		transform:rotate(18deg);/*in order to change something you need to declare it in both places*/
+		transition: all 0.2s linear;/*all factors in all things that are different between normal and hover states. set up the properties so that they are different and then set up the transition.*/
+
+	}
+	.branding h2:hover{
+		cursor:pointer;
+		transform:rotate(0deg);
+		transform:scale(1.2);
+
+	}
+
+	.nav_tools {
+		display:none;/*show and hide things on your page*/
+	}
+	.nav_main{
+		background:#e4e1d1;
+			/*
+			p{}
+			ul {}
+
+			this is called nesting and css does not support it, so you have to list each as a separate class. see below. ex. .nav_main p
+			*/
+		}
+
+		.nav_main p {/*descendent selector it starts with the class name.*/
+			background:#edc025;
+			padding:4px;
+			font-size:160%;
+			color:#88a308;
+		}
+		.nav_features{/*you can add ul. before this but it is not necesssary*/
+			padding:5px;
+			list-style: none;
+		}
+
+		.nav_features li{
+			float:left;/*floating this will collapse .nav_main to remedy this you can float it or add clearfix to nav_main*/
+			margin-right: 12px;
+		}
+		.nav_features a{
+			text-decoration: none;
+			display:block;/*links are inline so set display to block*/
+			background: url(img/btns.png) no-repeat;/*default value for background on any page is 'transparent'*/
+			text-align:center;
+			width:140px;
+			height:50px;
+			font-size:190%;
+			color:#fff;
+			line-height:50px;/*center text in the button*. it is directly related to the height of the thing. match line-height to height*/
+			
+		}
+		/*all of the buttons have their own classes*/
+		.nav_pickit a {/*targeting the anchor tag not the li*/
+
+		}
+		.nav_cookit a {
+			background-position:-150px 0;/*first value is the horizontal and the second is the vertical*/
+			/*the image is repeating so you can put any value in. turn off repeat back up by the background image*/
+
+		}
+
+	/*	.nav_storeit a{
+			background-position:-300px 0;
+			}*/
+			.cssgradients .nav_storeit a{/*if you add .cssgradients, it will leverage the modernizr library*/
+				/*background:-webkit-linear-gradient(top, #dfa910 0%, #fcde41 100%);*/
+				background:linear-gradient(to top, #dfa910 0%, #fcde41 100%);/* W3C */
+				border-radius:6px;
+			}
+
+			.no-cssgradients .nav_storeit a {/*place this into a css stylesheet that isn't even loaded unless needed*/
+			background: #dfa910;
+
+		}
+		.cssgradients .nav_storeit a:hover{/*if you add .cssgradients, it will leverage the modernizr library*/
+			/*background:-webkit-linear-gradient(top, #dfa910 0%, #fcde41 100%);*/
+			background:linear-gradient(to top, #fcde41 0%, #dfa910 100%);/* W3C */
+			border-radius:6px;
+		}
+
+		.nav_pickit a:hover{
+			background-position:0 -52px;
+		}
+
+		.nav_cookit a:hover{
+			background-position:-150px -52px;
+		}
+
+
+
+
+
+		</style>
+	</head>
+
+	<body class="">
+
+		<div class="wrapper">
+
+			<!-- 1. Branding -->
+			<div class="branding">
+				<h1>Basilica!</h1>
+				<h2>Beta</h2>
+			</div>
+
+			<!-- 2. Navigation -->
+			<div class="nav_main">
+
+				<p>Bonjour Monsieur <a href="#">Ferme</a></p>
+				<ul class="nav_tools"><!--this is hidden with display:none;-->
+					<li class="nav_account"><a href="#">Your account</a></li>
+					<li class="nav_help"><a href="#">Help</a></li>
+					<li class="nav_logout"><a href="#">Log out</a></li>
+					<li class="nav_rss"><a href="#">Nutritious RSS</a></li>
+				</ul>
+
+				<ul class="nav_features clearfix">
+					<li class="nav_pickit"><a href="#">pick it</a></li>
+					<li class="nav_cookit"><a href="#">cook it</a></li>
+					<li class="nav_storeit"><a href="#">store it</a></li>
+				</ul>
+			</div>
+
+			<div class="content clearfix">
+				<!-- 3. Main content -->
+				<div class="content_main hrecipe">
+					<h2 class="fn">Pesto</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus nunc nec dolor. Proin adipiscing interdum leo. Etiam convallis, quam ut ullamcorper tristique, mi nisl gravida sapien, et posuere est urna.</p>
+					<h3>Instructions</h3>
+					<ol class="instructions">
+						<li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu quam ut ipsum sodales semper. Ut magna mi, malesuada at, ornare in, molestie ac, lorem. </li>
+						<li>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </li>
+						<li>Curabitur interdum mi et massa. Suspendisse pulvinar, dolor in elementum rutrum, augue sem vehicula ante, posuere vulputate eros sem sed est. Aliquam accumsan lobortis justo.</li>
+					</ol>
+					<h3 class="">Ingredients</h3>
+					<ul>
+						<li class="ingredient">2 tablespoon Vinegar</li>
+						<li>quarter cup Olive Oil</li>
+						<li>1 <abbr title="Pounds">lb</abbr> plain pasta</li>
+						<li>half cup basil</li>
+						<li>quarter cup cheese</li>
+						<li>ground pepper</li>
+						<li>salt</li>
+					</ul>
+				</div>
+
+				<!-- 4. Supplementary content -->
+				<div class="content_sub">
+					<h3>Similar recipes</h3>
+					<ul>
+						<li>
+							<h4><a href="#">Thai Basil</a></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus nunc nec dolor. Proin adipiscing interdum leo. Etiam convallis, quam ut ullamcorper tristique, mi nisl gravida sapien, et posuere est urna.</p>
+						</li>
+						<li>
+							<h4><a href="#">Vietnamese Curry</a></h4>
+							<p>Suspendisse pulvinar, dolor in elementum rutrum, augue sem vehicula ante, posuere vulputate eros sem sed est. Aliquam accumsan lobortis justo.</p>
+						</li>
+					</ul>
+					<h3>You might also like</h3>
+					<ul>
+						<li>
+							<h4><a href="#">You might also like</a></h4>
+							<p>The recipe in the link is half the original recipe that yields about half the amount. I always cut down on the oil in this recipe.</p>
+						</li>
+						<li>
+							<h4><a href="#">Thai Basil</a></h4>
+							<p>The author says her mother makes this dish during Chinese New Year, so it is a coincidence that I made it for the Easter weekend.</p>
+						</li>
+						<li>
+							<h4><a href="#">Vietnamese Curry</a></h4>
+							<p>For the final class of this course, we made a curry, with flat rice noodles and fresh garden vegetables.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 5. Site information -->
+			<div class="site_info">
+				<h5><a href="#" title="Back to top">Basilica!</a></h5>
+				<p>Beta until the leaves have wilted</p>
+				<p>Copyright Basilica! All Rights Reserved</p>
+			</div>
+
+		</div><!-- end wrapper -->
+	</body>
+	</html>
